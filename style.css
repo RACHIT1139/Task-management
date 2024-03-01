@@ -1,0 +1,424 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+/* Header styles */
+header {
+    background-color: #1E1E1E;
+    color: #00FFC1;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 5px solid #00FFC1;
+    font-size: 2rem;
+    position: relative; /* Add position property */
+}
+
+/* Apply styles to the h1 element within the header */
+header h1 {
+    font-size: 2.5rem; /* Increase font size for the heading */
+    margin: 0; /* Remove margin for the heading */
+    padding: 0; /* Remove padding for the heading */
+}
+
+/* Add a pseudo-element for decorative styling */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #1E1E1E 0%, transparent 100%); /* Apply a gradient overlay */
+    z-index: -1; /* Place it behind the header content */
+}
+
+/* Main content styles */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 193, 0.3);
+}
+
+/* Task list styles */
+.task-list {
+    border: 2px solid #00FFC1;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+/* Task styles */
+.task {
+    border-bottom: 2px solid #00FFC1;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 255, 193, 0.2); /* Add a subtle shadow */
+}
+
+/* Form styles */
+.task-form {
+    border: 2px solid #00FFC1;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+/* Input and button styles */
+.task-form label {
+    margin-bottom: 0.5rem;
+    color: #00FFC1;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+    padding: 0.5rem;
+    border: 2px solid #00FFC1;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+    border-color: #00B8A9;
+}
+
+.task-form button {
+    background-color: #00FFC1;
+    color: #121212;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+.task-form button:hover {
+    background-color: #00B8A9;
+}
+
+/* Edit icon style */
+.edit-icon {
+    color: #00FFC1;
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.edit-icon:hover {
+    opacity: 1;
+}
+
+/* Reminder indicator style */
+.reminder-indicator {
+    color: #FF6347;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Task category styles */
+.task-category {
+    font-weight: bold;
+}
+
+.task-category[category="Work"] {
+    color: #FF9800;
+}
+
+.task-category[category="Personal"] {
+    color: #FFEB3B;
+}
+
+.task-category[category="Shopping"] {
+    color: #00E676;
+}
+
+deadline-bar {
+    height: 5px;
+    background-color: #00FFC1;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Styling for the due date */
+.task .due-date {
+    font-size: 1rem;
+    color: #00FFC1;
+    margin-top: 0.5rem;
+    position: relative; /* Add position relative for positioning the deadline bar */
+}
+
+/* Styling for the progress bar within the deadline bar */
+.task .deadline-progress {
+    height: 100%;
+    width: 50%; /* Example: Initially set to 50%, adjust as needed */
+    background-color: #00FFC1;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.task h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+.task p {
+    font-size: 1rem;
+    color: #B0B0B0; /* Light gray text */
+    margin-bottom: 0.5rem;
+}
+.task .due-date {
+    font-size: 1rem;
+    color: #00FFC1;
+    margin-top: 0.5rem;
+}
+.task .status-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.task .status-button {
+    background-color: transparent;
+    color: #00FFC1;
+    border: 2px solid #00FFC1;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.task .status-button.completed {
+    background-color: #00FFC1;
+    color: #121212;
+}
+
+/* Add hover effect to status buttons */
+.task .status-button:hover {
+    background-color: #00B8A9;
+}
+
+/* Styling for the delete button */
+.task .delete-button {
+    background-color: #FF5722;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Add hover effect to delete button */
+.task .delete-button:hover {
+    background-color: #E64A19;
+}
+/* Set the background image */
+body {
+    background-image: url('background.jpg');
+    background-size: cover; /* Ensure the image covers the entire viewport */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+    background-position: center center; /* Center the image horizontally and vertically */
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    overflow-x: hidden; /* Prevent horizontal scrollbar caused by fixed background */
+}
+
+/* Add animation to the background image */
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; } /* Start position */
+    100% { background-position: 100% 0; } /* End position (horizontally shifted) */
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: backgroundAnimation 20s linear infinite; /* Adjust the animation duration as needed */
+}
+/* Task list display box styles */
+.task-list-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    border: 2px solid #00FFC1;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Task list item styles within the display box */
+.task-list-display-item {
+    margin-bottom: 5px;
+}
+/* For small screens, less than 600px wide (e.g., smartphones) */
+@media (max-width: 600px) {
+    /* Your CSS styles for small screens */
+}
+
+/* For medium screens, between 600px and 1024px wide (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Your CSS styles for medium screens */
+}
+
+/* For large screens, greater than 1024px wide (e.g., desktops) */
+@media (min-width: 1025px) {
+    /* Your CSS styles for large screens */
+}
+.container {
+    width: 100%; /* To take full available width */
+    max-width: 1200px; /* To limit maximum width for larger screens */
+}
+/* Styles for all screen sizes */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Styles for screens less than 600px wide (e.g., smartphones) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Styles for screens between 600px and 1024px wide (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+}
+/* Style for the feedback modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Style for the feedback form heading */
+.modal h2 {
+    font-size: 24px;
+    color: #00FFC1;
+    margin-bottom: 20px;
+}
+
+/* Style for input fields */
+.modal input[type="text"],
+.modal input[type="email"],
+.modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the submit button */
+.modal button[type="submit"] {
+    background-color: #00FFC1;
+    color: #121212;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #00B8A9;
+}
+
+/* Close button style */
+.modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Additional styles as needed */
+/* Style for the success message */
+#success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00FFC1;
+    color: #121212;
+    border: 1px solid #00FFC1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#success-message .tick {
+    font-size: 48px;
+    color: #121212;
+    animation: tickAnimation 1s ease-in-out;
+}
+
+@keyframes tickAnimation {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
